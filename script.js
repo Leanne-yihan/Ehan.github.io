@@ -29,3 +29,4 @@ document.querySelectorAll('.navbar a').forEach(anchor => {
         }
     });
 });
+
