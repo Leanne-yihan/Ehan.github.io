@@ -1,5 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* 默认隐藏提示信息 */
+.mobile-message {
+    display: none;
+    text-align: center;
+    font-size: 18px;
+    color: #ffffff;
+    margin-top: 50vh; /* 居中显示 */
+    font-weight: bold;
+}
+
+/* 移动端隐藏所有内容，只显示这句话 */
+@media (max-width: 768px) {
+    body > * {
+        display: none !important; /* 隐藏所有内容 */
+    }
+
+    .mobile-message {
+        display: block !important; /* 只显示提示信息 */
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
