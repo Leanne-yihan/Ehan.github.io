@@ -68,11 +68,11 @@ body {
 }
 
 .home-content {
-    max-width: 600px;
+    max-width: 800px;
 }
 
 .home-content h3 {
-    font-size: 32px;
+    font-size: 38px;
     font-weight: 700;
     opacity: 0;
     animation: slideBottom 1s ease forwards;
@@ -100,14 +100,14 @@ body {
 }
 
 .home-content p {
-    font-size: 16px;
+    font-size: 28px;
     opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: 0.7s;
 }
 
 .home-img img {
-    max-width: 450px;
+    max-width: 500px;
     border-radius: 50%;
     margin-right: -20px;
     box-shadow: 0 0 20px #b7b2a9;
@@ -168,56 +168,6 @@ body {
     border: 2px solid #b7b2a9;
 }
 
-
-/* about */
-
-.about {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: row-reverse; /* 让文字和图片交换位置 */
-    justify-content: space-between;
-    align-items: center;
-    padding: 70px 10% 0;
-}
-
-.about-content {
-    max-width: 600px;
-    text-align: right; /* 让整个 about-content 里的文本居右 */
-}
-
-
-.about-content h3 {
-    font-size: 32px;
-    font-weight: 700;
-    opacity: 0;
-    animation: slideBottom 1s ease forwards;
-    animation-delay: .7s;
-    text-align: right; /* 让 h3 文字居右 */
-}
-
-.about-content h3:nth-of-type(2) {
-    margin-bottom: 30px;
-    opacity: 0;
-    animation: slideTop 1s ease forwards;
-    animation-delay: .7s;
-    text-align: right; /* 让第二个 h3 也居右 */
-}
-
-.about-content h3 span {
-    color: #b7b2a9;
-}
-
-.about-content h1 {
-    font-size: 56px;
-    font-weight: 700;
-    margin: -3px 0;
-    opacity: 0;
-    animation: slideRight 1s ease forwards;
-    animation-delay: 1s;
-    text-align: right; /* 让 h1 居右 */
-}
 .home-img img {
     max-width: 450px;
     border-radius: 50%;
@@ -226,6 +176,384 @@ body {
     opacity: 0;
     animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
     animation-delay: 2s, 3s;
+}
+
+/* 学历展示区域 */
+/* Education 区域样式 */
+.education {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+
+    padding: 70px 10% 0;
+    flex-direction: column; /* 让描述文字在上，Education 在下 */
+    gap: 100px; /* 调小间距 */
+}
+
+/* 🔹 顶部的描述性文字 */
+.education-description {
+    font-size: 38px;  /* 大字体 */
+    font-weight: 600;
+    line-height: 1.4;
+    max-width: 100%;
+    text-align: left;
+    color: #fff;
+    margin-top: 100px ;
+}
+
+/* 🔹 Education 部分 */
+.education-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.education-left {
+    flex: 1;
+}
+
+.education-left h2 {
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 10px; /* 调小标题与列表的间距 */
+    opacity: 0;
+    transform: translateY(50px); /* 让它从下方滑入 */
+    transition: all 0.8s ease-out;
+}
+
+/* 🎬 当 class="show" 触发时，Education 标题才浮现 */
+.education.show .education-left h2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s; /* 让它比学历项稍早一点出来 */
+}
+
+
+/* 右侧学历列表 */
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 每个学历项（年份 + 学校 + 专业） */
+.education-item {
+    align-items: right;
+    display: flex;
+    align-items: baseline; /* 让年份和学校对齐 */
+    gap: 20px;
+    opacity: 0;  /* 初始隐藏 */
+    transform: translateY(50px); /* 从下往上滑动 */
+    transition: all 0.8s ease-out;
+}
+
+/* 🎬 当 class="show" 触发时，才播放动画 */
+.education.show .education-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 🎥 让每个学历项依次出现 */
+.education.show .education-item:nth-child(1) { transition-delay: 0.3s; }
+.education.show .education-item:nth-child(2) { transition-delay: 0.6s; }
+.education.show .education-item:nth-child(3) { transition-delay: 0.9s; }
+
+
+/* 年份样式 */
+.edu-date {
+    font-size: 32px;
+    font-weight: 600;
+    color: #b29574;  /* 金色调 */
+    min-width: 60px;
+    text-align: right;
+}
+
+/* 学校和专业信息 */
+.edu-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.edu-school {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.edu-major {
+    font-size: 22px;
+    color: #b7b2a9; /* 微妙的灰金色，与背景搭配 */
+}
+
+/* 🔹 地点（国家 & 城市，增强对比） */
+.edu-location {
+    font-size: 18px;
+    font-weight: 600;
+    color: #b29574; /* 深紫色，突出地点 */
+}
+
+.education-right {
+    margin-top: 165px; /* 让暑期经历对齐左侧第三行 */
+}
+
+
+
+/* 🔹 Internship */
+.internship-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    padding: 70px 10% 0;
+    flex-direction: column; /* 让描述文字在上，Education 在下 */
+    gap: 100px; /* 调小间距 */
+}
+
+/* 🔹 Internship 顶部描述 */
+.internship-des {
+    font-size: 38px !important; /* 大字体 */
+    font-weight: 600;
+    line-height: 1.4;
+    max-width: 100%;
+    text-align: left;
+    color: #fff;
+    margin-top: 50px ;
+}
+
+/* 🔹 Internship 链接列表 */
+.internship-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* 🔹 每个超链接 */
+.internship-link {
+    font-size: 45px;
+    font-weight: 400;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    position: relative; /* 让 tooltip 绝对定位 */
+}
+
+.internship-link:hover {
+    color: #b29574; /* 悬停变色 */
+}
+
+/* 🌍 Tooltip 样式优化 */
+.internship-link:hover::after {
+    content: attr(title); /* 直接从 title 里获取内容 */
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    transform: translateX(-50%);
+    padding: 12px 18px; /* 增加内边距，防止内容拥挤 */
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    font-size: 16px; /* 字体稍大 */
+    font-weight: 400;
+    border-radius: 8px;
+    text-align: center;
+    white-space: normal; /* 允许换行 */
+    min-width: 800px; /* 设置最小宽度，防止太小 */
+    word-wrap: break-word; /* 让长单词或URL换行 */
+    overflow-wrap: break-word; /* 兼容不同浏览器 */
+    line-height: 1.6; /* 增加行距，让内容更易读 */
+    z-index: 1000;
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1);
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* 🔹 添加一个小箭头 */
+.internship-link:hover::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 32px;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.85) transparent;
+    z-index: 1001;
+}
+
+/* 🔹 标题 & 副标题 */
+
+.contact {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    padding: 70px 10% 0;
+    flex-direction: column; /* 让描述文字在上，Education 在下 */
+    gap: 60px; /* 调小间距 */
+}
+.contact-title {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 100px;
+}
+
+.contact-subtitle {
+    font-size: 32px;
+    color: #7d7d7d;
+    margin-bottom: 30px;
+}
+
+/* 🔹 联系方式整体布局 */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 🔹 单个 Contact Item */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 300px; /* 控制整体宽度 */
+}
+
+/* 🔹 图标样式 */
+.contact-icon {
+    font-size: 30px;
+    color: #b29574; /* 紫色调，跟你的风格一致 */
+}
+
+/* 🔹 文字部分 */
+.contact-text {
+    text-align: left;
+}
+
+.contact-text h3 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.contact-text p {
+    font-size: 20px;
+    color: #7d7d7d;
+}
+
+/* 🌍 Portfolio 主体 */
+.portfolio {
+    text-align: center;
+    padding: 60px 20px;
+    width: 100%;
+    height: 100vh;
+}
+
+/* 🔹 标题 */
+.portfolio-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 50px;
+}
+
+.portfolio-subtitle {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+/* 🔹 Portfolio 容器 */
+.portfolio-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* 🔹 Portfolio 项目 */
+.portfolio-item {
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    min-width: 280px;
+    text-align: left;
+}
+
+/* 🔹 视频 & Figma & PPT */
+video, iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+}
+
+/* 🔹 标题 */
+.portfolio-item h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+/* 🔹 描述 */
+.portfolio-item p {
+    font-size: 18px;
+    min-height: 150px;
+    color: #ffffff;
+}
+
+/* 🔹 按钮 */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #7d7d7d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: #6b55c5;
+}
+
+/* 🌍 Footer 样式 */
+.footer {
+    background: transparent;
+    padding: 50px;
+    text-align: center;
+    font-size: 14px;
+    color: #7d7d7d;
+    margin-top: 50px;
+}
+
+/* 🔹 版权文字 */
+.footer-text {
+    margin-bottom: 40px;
+}
+
+/* 🔹 社交媒体图标 */
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* 🔹 图标样式 */
+.footer-socials a {
+    font-size: 20px;
+    color: #7d7d7d;
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: #7d7d7d; /* 悬停时颜色加深 */
 }
 
 /* 动画 */
@@ -295,6 +623,17 @@ body {
     }
 
     100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
         transform: translateY(0);
     }
 }
