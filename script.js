@@ -228,3 +228,30 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const navbarLinks = document.querySelectorAll(".navbar a"); // 获取所有导航链接
+    const sections = document.querySelectorAll("section"); // 获取所有 section
+
+    function changeNavbarHighlight() {
+        let scrollPosition = window.scrollY;
+
+        sections.forEach((section) => {
+            let sectionTop = section.offsetTop - 100; // 触发颜色变化的时机
+            let sectionHeight = section.offsetHeight;
+            let sectionId = section.getAttribute("id");
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                navbarLinks.forEach((link) => {
+                    link.classList.remove("active"); // 先移除所有 active
+                    if (link.getAttribute("href") === `#${sectionId}`) {
+                        link.classList.add("active"); // 给当前 section 对应的 navbar 链接加 active
+                    }
+                });
+            }
+        });
+    }
+
+    window.addEventListener("scroll", changeNavbarHighlight);
+});
