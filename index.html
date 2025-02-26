@@ -16,48 +16,52 @@
 
      <!--==================== HEADER ====================-->
   <body>
-    <p class="mobile-message">Please visit the desktop version for a better experience.</p>
     <header class="header">
       <a href="#" class="logo">Ehan.</a>
 
+      <div class="menu-toggle">☰</div> 
       <nav class="navbar">
-        <a href="#home" class="active item" style="--i: 1">Home</a>
-        <a href="#education" class="nav-education" style="--i: 2">Education</a>
-        <a href="#internships" class="item" style="--i: 3">Internships</a>
-        <a href="#portfolio" class="item" style="--i: 4">Portfolio</a>
-        <a href="#contact" class="item" style="--i: 5">Contact</a>
-      </nav>
+        <a href="#home" class="active item" style="--i: 1" data-lang-key="home">Home</a>
+        <a href="#education" class="nav-education" style="--i: 2" data-lang-key="education">Education</a>
+        <a href="#internships" class="item" style="--i: 3" data-lang-key="internships">Internships</a>
+        <a href="#portfolio" class="item" style="--i: 4" data-lang-key="portfolio">Portfolio</a>
+        <a href="#contact" class="item" style="--i: 5" data-lang-key="contact">Contact</a>
+
+    </nav>
+    <button id="language-toggle" class="lang-btn">中文</button>
     </header>
 
     <!--==================== MAIN ====================-->
          <!--==================== HOME ====================-->
-    <section class="home" id="home">
-      <div class="home-content">
-        <h3>Hello,It's Me</h3>
-        <h1>Call Me Leanne</h1>
-        <h3>And I'm a <span class="multiple-text"></span></h3>
-        <p>
-          Fluent in Mandarin, English, and Japanese, I am passionate about the intersection of aesthetics and technology. 
+   <section class="home" id="home">
+    <div class="home-content">
+        <h3 data-lang-key="hello">Hello, It's Me</h3>
+        <h1 data-lang-key="name">Call Me Leanne</h1>
+        <h3><span data-lang-key="intro">And I'm a</span> <span class="multiple-text"></span></h3>
+        <p data-lang-key="description">
+            Fluent in Mandarin, English, and Japanese, I am passionate about the intersection of aesthetics and technology.
         </p>
-        <div class="social-media">
-         <!--- <a href="#" style="--i: 7"><i class="bx bxl-tiktok"></i></a>
-          <a href="#" style="--i: 8"><i class="bx bxl-facebook-circle"></i></a>
-          <a href="#" style="--i: 9"><i class="bx bxl-google"></i></a>-->
-          <a href="https://www.linkedin.com/in/yihan-feng-097b99324" style="--i: 10"><i class="bx bxl-linkedin-square"></i></a> 
+
+        <!-- 让 LinkedIn 和 Download CV 都在这个 div 里 -->
+        <div class="contact-buttons">
+            <a href="https://www.linkedin.com/in/yihan-feng-097b99324" class="linkedin-icon">
+                <i class="bx bxl-linkedin"></i>
+            </a>
+            <a href="冯奕涵-上海交通大学-求职意向：产品-2026年3月毕业.pdf" class="btn" data-lang-key="downloadCV">Download CV</a>
         </div>
-        <a href="冯奕涵-上海交通大学-求职意向：产品-2026年3月毕业.pdf" class="btn">Download CV</a>
-    
-      </div>
-      <div class="home-img">
-        <img src="IMG_9413.JPG" alt="" />
-      </div>
-    </section>
+    </div>
+
+    <div class="home-img">
+        <!--<img src="IMG_9413.JPG" alt="" />-->
+    </div>
+</section>
+
   
 <!--==================== Education ====================-->
 <section class="education" id="education">
   <!-- 🔹 顶部的描述文字 -->
   <div class="education-description">
-    <p>From Nanjing to Shanghai, from Nishinomiya to Los Angeles, my academic journey has taken me across cultures and perspectives.</p>
+    <p data-lang-key="edu_des">From Nanjing to Shanghai, from Nishinomiya to Los Angeles, my academic journey has taken me across cultures and perspectives.</p>
 </div>
 
 
@@ -65,39 +69,39 @@
   <!-- Education 标题和列表 -->
     <div class="education-content">
         <div class="education-left">
-            <h2>Education</h2>
+            <h2 data-lang-key="edu_title">Education</h2>
             <div class="education-list">
                 <!-- 教育项 1 -->
                 <div class="education-item">
                     <div class="edu-date">2019</div>
                     <div class="edu-info">
-                        <p class="edu-school">Nanjing University</p>
-                        <p class="edu-location">
+                        <p data-lang-key="edu_uni1" class="edu-school">Nanjing University</p>
+                        <p data-lang-key="edu_loc1" class="edu-location">
                             <i class='bx bx-map-pin'></i> Nanjing, China
                         </p>
-                        <p class="edu-major">Major: English</p>
+                        <p data-lang-key="edu_maj1" class="edu-major">Major: English</p>
                     </div>
                 </div>
                 <!-- 教育项 2 -->
                 <div class="education-item">
                     <div class="edu-date">2023</div>
                     <div class="edu-info">
-                        <p class="edu-school">Shanghai Jiao Tong University</p>
-                        <p class="edu-location">
+                        <p data-lang-key="edu_uni2" class="edu-school">Shanghai Jiao Tong University</p>
+                        <p data-lang-key="edu_loc2" class="edu-location">
                             <i class='bx bx-map-pin'></i> Shanghai, China
                         </p>
-                        <p class="edu-major">Major: Communication and Management</p>
+                        <p data-lang-key="edu_maj2" class="edu-major">Major: Communication and Management</p>
                     </div>
                 </div>
                 <!-- 教育项 3 -->
                 <div class="education-item">
                     <div class="edu-date">2024</div>
                     <div class="edu-info">
-                        <p class="edu-school">University of Southern California</p>
-                        <p class="edu-location">
+                        <p data-lang-key="edu_uni3" class="edu-school">University of Southern California</p>
+                        <p data-lang-key="edu_loc3"  class="edu-location">
                             <i class='bx bx-map-pin'></i> Los Angeles, USA
                         </p>
-                        <p class="edu-major">Major: Management and Marketing</p>
+                        <p data-lang-key="edu_maj3" class="edu-major">Major: Management and Marketing</p>
                     </div>
                 </div>
             </div>
@@ -106,13 +110,13 @@
         <!-- 右侧的暑期交换经历 -->
         <div class="education-right">
             <div class="education-item">
-                <div class="edu-date">July - August 2024</div>
+                <div data-lang-key="edu_mon" class="edu-date">July - August 2024</div>
                 <div class="edu-info">
-                    <p class="edu-school">Kwansei Gakuin University</p>
-                    <p class="edu-location">
-                        <i class='bx bx-map-pin'></i> Osaka, Japan
+                    <p data-lang-key="edu_uni4" class="edu-school">Kwansei Gakuin University</p>
+                    <p data-lang-key="edu_loc4" class="edu-location">
+                        <i class='bx bx-map-pin'></i> Nishinomiya, Japan
                     </p>
-                    <p class="edu-major">Program: Summer Exchange</p>
+                    <p  data-lang-key="edu_maj4" class="edu-major">Program: Summer Exchange</p>
                 </div>
             </div>
         </div>
@@ -140,38 +144,28 @@
              
         <!-- 🔹 顶部描述文字 -->
         <div class="internship-des">
-          <p>From consulting and new media operations to product management, I've gradually discovered my true passion and direction—where product and marketing intersect.</p>
+          <p data-lang-key="intern_des">From consulting and new media operations to product management, I've gradually discovered my true passion and direction—where product and marketing intersect.</p>
       </div>
 
 <!-- 🔹 Internship 链接列表 -->
 <div class="internship-list">
-  <p><a href="#" class="internship-link" title="Researched macroeconomic and luxury industry trends for Richemont’s financial training program, analyzing the impact of China’s common prosperity policy. ">
-      Deloitte
-  </a></p>
-  <p><a href="#" class="internship-link" title="Managed social media operations for six fashion brands, including NET-A-PORTER and ZEGNA, by tracking brand performance across platforms through volume index analysis, producing eight weekly and four monthly reports, and conducting competitive analysis on social media advertising campaigns.">
-      Dentsu
-  </a></p>
-  <p><a href="#" class="internship-link" title="Planned and executed bi-weekly content campaigns, boosting brand exposure with a 20% influencer penetration rate. Built relationships with 100+ top influencers, optimizing content to increase GMV by 13%. Led user research to enhance the 'Click to Buy' feature and leveraged data analysis to refine content strategy.">
-      RedNote
-  </a></p>
-  <p><a href="#" class="internship-link" title="Researched waterproof materials in construction, analyzing 100+ data points and translating 17 pages of Japanese standards. Mapped Amazon’s core business growth strategies and key milestones, synthesizing client insights to inform project solutions.">
-      BCG
-  </a></p>
-  <p><a href="#" class="internship-link" title="Led 5+ web acquisition projects from planning to launch, aligning marketing needs, coordinating with engineering, and ensuring 100% successful delivery. Optimized workflows, improving on-time delivery by 30%.">
-      Lilith Games
-  </a></p>
+  <p><a href="#" class="internship-link" data-lang-key="intern_des1" data-tooltip="title1">Deloitte</a></p>
+  <p><a href="#" class="internship-link" data-lang-key="intern_des2" data-tooltip="title2">Dentsu</a></p>
+  <p><a href="#" class="internship-link" data-lang-key="intern_des3" data-tooltip="title3">RedNote</a></p>
+  <p><a href="#" class="internship-link" data-lang-key="intern_des4" data-tooltip="title4">BCG</a></p>
+  <p><a href="#" class="internship-link" data-lang-key="intern_des5" data-tooltip="title5">Lilith Games</a></p>
 </div>
 </section>
 
      <!--==================== Portfolio ====================-->
      <section class="portfolio" id="portfolio">
-      <h2 class="portfolio-title">Portfolio</h2>
-      <p class="portfolio-subtitle">My recent works</p>
+      <h2 data-lang-key="port1" class="portfolio-title">Portfolio</h2>
+      <p data-lang-key="port2" class="portfolio-subtitle">My recent works</p>
   
       <div class="portfolio-container">
           <!-- 🎬 视频项目 -->
           <div class="portfolio-item">
-            <iframe src="//player.bilibili.com/player.html?bvid=BV1m3PsejE5q&autoplay=0" 
+            <iframe id="bilibili-video" src="//player.bilibili.com/player.html?bvid=BV1m3PsejE5q&autoplay=0" 
             scrolling="no" 
             boarder="0" 
             frameborder="no" 
@@ -181,17 +175,17 @@
             height="500">
     </iframe>
               
-              <h3>Vlog in JP</h3>
-              <p>In August 2024, I joined Kwansei Gakuin University for a summer exchange program and created this video to capture the brightest summer of 2024.</p>
-              <a href="https://www.bilibili.com/video/BV1m3PsejE5q/?vd_source=66d4a13e837d9d4a665c6a5af9568378" class="btn">Watch Video</a>
+              <h3 data-lang-key="port3">Vlog in JP</h3>
+              <p data-lang-key="port4">In August 2024, I joined Kwansei Gakuin University for a summer exchange program and created this video to capture the brightest summer of 2024.</p>
+              <a data-lang-key="port_d1" href="https://www.bilibili.com/video/BV1m3PsejE5q/?vd_source=66d4a13e837d9d4a665c6a5af9568378" class="btn">Watch Video</a>
           </div>
   
           <!-- 📊 PPT 项目 -->
           <div class="portfolio-item">
               <iframe src="Peacefume.pdf" width="100%" height="300px"></iframe>
-              <h3>Integrated Marketing Plan</h3>
-              <p>In 2022, as team leader, I participated in the L'Oréal BrandStorm competition, developing an integrated marketing plan and video materials for Maison Margiela Fragrances, earning a spot in the national Top 100.</p>
-              <a href="Peacefume.pdf" class="btn" download>Download PPT</a>
+              <h3 data-lang-key="port5">Integrated Marketing Plan</h3>
+              <p data-lang-key="port6">In 2022, as team leader, I participated in the L'Oréal BrandStorm competition, developing an integrated marketing plan and video materials for Maison Margiela Fragrances, earning a spot in the national Top 100.</p>
+              <a data-lang-key="port_d2" href="Peacefume.pdf" class="btn" download>Download PPT</a>
           </div>
   
           <!-- 🎨 Figma 项目 -->
@@ -200,23 +194,23 @@
 
                   <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/V3Ei773HXCbrJZo7AX0Psp/Gamerhood-Wireframe-Phase-1?node-id=456-273515&starting-point-node-id=456%3A273515&embed-host=share" allowfullscreen></iframe>
               </iframe>
-              <h3>Figma UI/UX Design</h3>
-              <p>In 2024, as the lead designer for my Product Management UX course at USC, I designed the Gamerhood app, which received high praise from the client.</p>
-              <a href="https://www.figma.com/proto/V3Ei773HXCbrJZo7AX0Psp/Gamerhood-Wireframe-Phase-1?node-id=456-273515&starting-point-node-id=456%3A273515&t=1F9WWfYhfjZB5Mfk-1" class="btn" target="_blank">View in Figma</a>
+              <h3 data-lang-key="port7">Figma UI/UX Design</h3>
+              <p data-lang-key="port8">In 2024, as the lead designer for my Product Management UX course at USC, I designed the Gamerhood app, which received high praise from the client.</p>
+              <a data-lang-key="port_d3" href="https://www.figma.com/proto/V3Ei773HXCbrJZo7AX0Psp/Gamerhood-Wireframe-Phase-1?node-id=456-273515&starting-point-node-id=456%3A273515&t=1F9WWfYhfjZB5Mfk-1" class="btn" target="_blank">View in Figma</a>
           </div>
       </div>
   </section>
 
       <!--==================== Contact ====================-->
       <section class="contact" id="contact">
-        <h2 class="contact-title">Contact me</h2>
+        <h2 data-lang-key="con1" class="contact-title">Contact me</h2>
     
         <div class="contact-info">
             <!-- 📞 电话 -->
             <div class="contact-item">
                 <i class="bx bx-phone-call contact-icon"></i>
                 <div class="contact-text">
-                    <h3>Call me</h3>
+                    <h3 data-lang-key="con2">Call me</h3>
                     <p>187 0172 9221</p>
                 </div>
             </div>
@@ -225,7 +219,7 @@
             <div class="contact-item">
                 <i class="bx bx-envelope contact-icon"></i>
                 <div class="contact-text">
-                    <h3>E-mail</h3>
+                    <h3 data-lang-key="con3">E-mail</h3>
                     <p>yihanfen@marshall.usc.edu</p>
                 </div>
             </div>
@@ -234,8 +228,8 @@
             <div class="contact-item">
                 <i class="bx bx-map contact-icon"></i>
                 <div class="contact-text">
-                    <h3>Location</h3>
-                    <p>Shanghai, CHN</p>
+                    <h3 data-lang-key="con4">Location</h3>
+                    <p data-lang-key="con5">Shanghai, CHN</p>
                 </div>
             </div>
         </div>
