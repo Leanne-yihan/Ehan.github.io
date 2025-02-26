@@ -220,3 +220,11 @@ document.addEventListener("DOMContentLoaded", function () {
         navbar.classList.toggle("active");
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".internship-link").forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault(); // 阻止默认跳转
+        });
+    });
+});
