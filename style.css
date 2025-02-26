@@ -1,25 +1,291 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* 默认隐藏提示信息 */
+/* 默认隐藏提示信息 
 .mobile-message {
     display: none;
     text-align: center;
     font-size: 18px;
     color: #ffffff;
-    margin-top: 50vh; /* 居中显示 */
+    margin-top: 50vh; 
     font-weight: bold;
 }
 
-/* 移动端隐藏所有内容，只显示这句话 */
-@media (max-width: 768px) {
+/* 移动端隐藏所有内容，只显示这句话 
+/@media (max-width: 768px) {
     body > * {
-        display: none !important; /* 隐藏所有内容 */
+        display: none !important; 
     }
 
     .mobile-message {
-        display: block !important; /* 只显示提示信息 */
-    }
+        display: block !important; 、
+}*/
+
+/* 让汉堡菜单只在移动端显示 */
+.menu-toggle {
+    display: none; /* 默认隐藏 */
 }
+
+@media (max-width: 768px) {
+
+    .footer {
+        font-size: 6px !important; /* 让 footer 文字变小 */
+        line-height: 1.2; /* 让行距更紧凑 */
+    }
+
+    /* 强制 footer 内所有子元素也变小 */
+    .footer *,
+    .footer p,
+    .footer span,
+    .footer a {
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+    }
+
+     /* 🔹 主标题（首页大标题、重要标题） */
+     h1 {
+        font-size: 35px !important; 
+        font-weight: 700;
+        line-height: 1.4;
+    }
+
+    /* 🔹 二级标题（Section 标题，如“教育背景”） */
+    h2 {
+        font-size: 30px !important;
+        font-weight: 600;
+        line-height: 1.4;
+    }
+
+    /* 🔹 三级标题（卡片标题，如公司名称、项目名称） */
+    h3 {
+        font-size: 28px !important;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    /* 🔹 段落文本（主要内容） */
+    p {
+        font-size: 22px !important;
+        font-weight: 400;
+        line-height: 1.7;
+    }
+
+    /* 🔹 让导航栏字体稍微小一些 */
+    .navbar a {
+        font-size: 12px !important;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+    }
+
+    /* 🔹 按钮和链接 */
+    .btn, .lang-btn {
+        font-size: 12px !important;
+        padding: 6px 12px;
+        font-weight: 500;
+    }
+
+    /* 🔹 让教育经历部分错落有致 */
+    .edu-date {
+        font-size: 20px !important;
+        font-weight: 600;
+    }
+
+    .edu-school {
+        font-size: 18px !important;
+        font-weight: 600;
+    }
+
+    .edu-major, .edu-location {
+        font-size: 14px !important;
+        font-weight: 500;
+    }
+
+    /* 🔹 让 Internship 项目错落 */
+    .internship-link {
+        font-size: 18px !important;
+        font-weight: 500;
+    }
+
+    /* 🔹 Portfolio 作品集优化 */
+    .portfolio-title {
+        font-size: 22px !important;
+        font-weight: 700;
+    }
+
+    .portfolio-subtitle {
+        font-size: 18px !important;
+        font-weight: 500;
+    }
+
+    .portfolio-item h3 {
+        font-size: 16px !important;
+        font-weight: 600;
+    }
+
+    .portfolio-item p {
+        font-size: 14px !important;
+        line-height: 1.6;
+    }
+
+    /* 🔹 Contact 联系方式 */
+    .contact-title {
+        font-size: 22px !important;
+        font-weight: 700;
+    }
+
+    .contact-text h3 {
+        font-size: 18px !important;
+        font-weight: 600;
+    }
+
+    .contact-text p {
+        font-size: 14px !important;
+    }
+
+ 
+
+      /* 🔹 让每个 section 变成一个完整的“板块” */
+      section {
+        width: 100%;
+        min-height: auto; /* 高度根据内容自适应 */
+        padding: 10% 5%; /* 保持足够的内边距，防止挤压 */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    /* 🔹 确保每个 section 之间不会重叠 */
+    section + section {
+        margin-top: 0; /* 确保不会有负 margin */
+    }
+
+    /* 🔹 允许 section 里的内容滚动 */
+    .home-content, 
+    .internship-des{
+        max-width: 90%;
+        word-break: break-word;
+        overflow:visible; /* 允许内容滚动 */
+    }
+
+
+    .education-content,
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    overflow: scroll;
+}
+    /* 🔹 确保 section 内部的内容不会溢出 */
+section > * {
+    max-width: 100%;
+    overflow-wrap: break-word; /* 让文本换行 */
+}
+
+/* 🔹 让 section 内容不会溢出 */
+.scrollable-content {
+    max-height: 80vh; /* 限制最大高度，但不会溢出 */
+    overflow-y: auto; /* 让超出的内容可以滚动 */
+    padding-right: 10px; /* 预留滚动条空间 */
+}
+
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+    /* 🔹 避免 flex 挤压内容 */
+    .education-content,
+    .internship-container,
+    .portfolio
+    .portfolio-container,
+    .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 🔹 让 iframe 视频不会超出 */
+    .portfolio iframe {
+        width: 100%;
+        height: auto;
+        max-height: 60vh;
+    }
+
+    /* 🔹 让每个 section 里的大内容可以滚动 */
+    .scrollable-section {
+        max-height: 80vh;
+        overflow-y: auto;
+        padding-right: 10px; /* 预留滚动条空间 */
+    }
+
+    .header {
+        background: rgba(31, 36, 45, 0.95); /* 与背景一致，添加透明度 */
+        padding: 15px 5%;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+   /* 🔹 让导航项隐藏，使用菜单按钮展示 */
+   .navbar {
+    display: none; /* 默认隐藏菜单 */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* 下移，避免遮挡 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: rgba(31, 36, 45, 0.98);
+    border-radius: 12px;
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align:center;
+}
+.lang-btn {
+    right: 1%; /* 让按钮更贴边 */
+    font-size: 10px; /* 调整字体大小 */
+}
+.navbar a {
+    display: block;
+    padding: 12px;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 🔹 汉堡菜单按钮 */
+.menu-toggle {
+    display: block;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+    display: block;
+}
+
+/* 菜单展开时显示 */
+.navbar.active {
+    display: flex;
+}
+}
+   
+
+
 
 * {
     margin: 0;
@@ -48,6 +314,8 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    background: rgba(31, 36, 45, 0.95); /* 与背景颜色相同，透明度0.95 */
+    backdrop-filter: blur(5px); /* 添加模糊效果，增强层次感 */
 }
 
 .logo {
@@ -78,22 +346,80 @@ body {
     color: #b7b2a9;
 }
 
+/* 默认按钮样式 */
+.lang-btn {
+    background: linear-gradient(135deg, #b7b2a9, #9e968c); /* 添加渐变背景 */
+    border: 2px solid transparent; /* 透明边框，避免太呆板 */
+    color: #1f242d;
+    font-size: 16px;
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 12px; /* 圆角更自然 */
+    transition: all 0.3s ease-in-out; /* 平滑过渡 */
+    box-shadow: 0 4px 10px rgba(183, 178, 169, 0.3); /* 柔和阴影 */
+    position: relative;
+    overflow: hidden;
+}
+
+/* 悬停时的动态效果 */
+.lang-btn:hover {
+    background: linear-gradient(135deg, #9e968c, #b7b2a9); /* 颜色渐变反转 */
+    color: #ffffff;
+    box-shadow: 0 6px 15px rgba(183, 178, 169, 0.5); /* 更强烈的阴影 */
+    transform: scale(1.05); /* 轻微放大，增加动感 */
+}
+
+/* 按下时的点击反馈 */
+.lang-btn:active {
+    transform: scale(0.95); /* 点击时略微缩小 */
+    background: linear-gradient(135deg, #1f242d, #4a4a4a); /* 变成深色渐变 */
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(183, 178, 169, 0.2); /* 缩小阴影 */
+}
+
+/* 添加一个渐变光效，制造灵动感 */
+.lang-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, rgba(255, 255, 255, 0) 50%);
+    transition: all 0.5s ease-out;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+/* 点击时触发光晕动画 */
+.lang-btn:active::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+
+
 .home {
     position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     padding: 70px 10% 0;
+    align-items: center;
+  
 }
 
 .home-content {
-    max-width: 800px;
+    max-width: 100%;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column; /* 让内容竖直排列 */
+    
 }
 
 .home-content h3 {
-    font-size: 38px;
+    font-size: 35px;
     font-weight: 700;
     opacity: 0;
     animation: slideBottom 1s ease forwards;
@@ -112,7 +438,7 @@ body {
 }
 
 .home-content h1 {
-    font-size: 56px;
+    font-size: 50px;
     font-weight: 700;
     margin: -3px 0;
     opacity: 0;
@@ -121,14 +447,14 @@ body {
 }
 
 .home-content p {
-    font-size: 28px;
+    font-size: 23px;
     opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: 0.7s;
 }
 
 .home-img img {
-    max-width: 500px;
+    max-width: 300px;
     border-radius: 50%;
     margin-right: -20px;
     box-shadow: 0 0 20px #b7b2a9;
@@ -137,51 +463,59 @@ body {
     animation-delay: 2s, 3s;
 }
 
-.social-media a {
-    display: inline-flex;
+/* 让 LinkedIn 图标和 Download CV 按钮垂直排列 */
+.contact-buttons {
+    display: flex;
+    flex-direction: column; /* 确保图标和按钮垂直 */
+    align-items: flex-start; /* 让它们左对齐 */
+    gap: 15px; /* 控制图标和按钮的间距 */
+}
+
+/* LinkedIn 图标 */
+.linkedin-icon {
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 50px;  /* 圆形的宽度 */
+    height: 50px; /* 圆形的高度 */
     background: transparent;
-    border: 2px solid #b7b2a9;
-    border-radius: 50%;
+    border: 2px solid #b7b2a9; /* 添加边框 */
+    border-radius: 50%; /* 让它变成圆形 */
     color: #b7b2a9;
     font-size: 20px;
     text-decoration: none;
-    margin: 30px 15px 30px 0;
-    transition: 0.5s ease;
-    opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: calc(0.2s * var(--i));
+    transition: 0.3s;
+    margin-top: 30px;
 }
 
-.social-media a:hover {
+.linkedin-icon:hover {
     background: #b7b2a9;
     color: #1f242d;
-    box-shadow: 0 0 20px #b7b2a9;
+    box-shadow: 0 0 10px #b7b2a9;
 }
 
+/* ✅ 恢复 Download CV 按钮的原始样式（不要变圆） */
 .btn {
     display: inline-block;
     padding: 12px 28px;
     background: #b7b2a9;
     text-decoration: none;
-    border-radius: 40px;
+    border-radius: 5px; /* 这里改成 5px，防止按钮变圆 */
     box-shadow: 0 0 10px #b7b2a9;
     font-size: 16px;
     color: #1f242d;
-    letter-spacing: 1px;
     font-weight: 600;
     transition: 0.5s ease;
     opacity: 0;
     animation: slideTop 1s ease forwards;
     animation-delay: 2s;
+    margin-top: 10px;
 }
 
 .btn:hover {
-    box-shadow: 0 0 20px #b7b2a9;
+    background: #9e968c;
 }
+
 
 .btn:active {
     background: none;
@@ -206,7 +540,6 @@ body {
     width: 100%;
     height: 100vh;
     display: flex;
-
     padding: 70px 10% 0;
     flex-direction: column; /* 让描述文字在上，Education 在下 */
     gap: 100px; /* 调小间距 */
@@ -225,10 +558,10 @@ body {
 
 /* 🔹 Education 部分 */
 .education-content {
-    display: flex;
+    display:flex;
     justify-content: space-between;
     align-items: flex-start;
-    max-width: 100%;
+    min-width: 60%;
     margin: 0 auto;
 }
 
@@ -237,27 +570,20 @@ body {
 }
 
 .education-left h2 {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 600;
     margin-bottom: 10px; /* 调小标题与列表的间距 */
-    opacity: 0;
     transform: translateY(50px); /* 让它从下方滑入 */
     transition: all 0.8s ease-out;
 }
 
-/* 🎬 当 class="show" 触发时，Education 标题才浮现 */
-.education.show .education-left h2 {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.2s; /* 让它比学历项稍早一点出来 */
-}
 
 
 /* 右侧学历列表 */
 .education-list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
 }
 
 /* 每个学历项（年份 + 学校 + 专业） */
@@ -266,16 +592,10 @@ body {
     display: flex;
     align-items: baseline; /* 让年份和学校对齐 */
     gap: 20px;
-    opacity: 0;  /* 初始隐藏 */
     transform: translateY(50px); /* 从下往上滑动 */
     transition: all 0.8s ease-out;
 }
 
-/* 🎬 当 class="show" 触发时，才播放动画 */
-.education.show .education-item {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 /* 🎥 让每个学历项依次出现 */
 .education.show .education-item:nth-child(1) { transition-delay: 0.3s; }
@@ -354,7 +674,7 @@ body {
 /* 🔹 每个超链接 */
 .internship-link {
     font-size: 45px;
-    font-weight: 400;
+    font-weight: 200;
     color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -366,29 +686,23 @@ body {
     color: #b29574; /* 悬停变色 */
 }
 
-/* 🌍 Tooltip 样式优化 */
-.internship-link:hover::after {
-    content: attr(title); /* 直接从 title 里获取内容 */
+/* 🔹 重新定义 Tooltip 样式 */
+.custom-tooltip {
     position: absolute;
-    left: 50%;
-    top: 40px;
-    transform: translateX(-50%);
-    padding: 12px 18px; /* 增加内边距，防止内容拥挤 */
     background-color: rgba(0, 0, 0, 0.85);
     color: #fff;
-    font-size: 16px; /* 字体稍大 */
-    font-weight: 400;
+    font-size: 16px;
+    padding: 12px 18px;
     border-radius: 8px;
     text-align: center;
-    white-space: normal; /* 允许换行 */
-    min-width: 800px; /* 设置最小宽度，防止太小 */
-    word-wrap: break-word; /* 让长单词或URL换行 */
-    overflow-wrap: break-word; /* 兼容不同浏览器 */
-    line-height: 1.6; /* 增加行距，让内容更易读 */
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.6;
     z-index: 1000;
     box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1);
-    opacity: 1;
-    transition: opacity 0.2s ease-in-out;
+    display: none;
+    max-width: 600px;
 }
 
 /* 🔹 添加一个小箭头 */
@@ -549,7 +863,7 @@ video, iframe {
     background: transparent;
     padding: 50px;
     text-align: center;
-    font-size: 14px;
+    font-size: 1dvw;
     color: #7d7d7d;
     margin-top: 50px;
 }
