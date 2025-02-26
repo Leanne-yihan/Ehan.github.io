@@ -169,8 +169,11 @@
         overflow:visible; /* 允许内容滚动 */
     }
 
+ 
 
-    .education-content,
+    .education-content{
+        overflow: scroll;
+    }
 .portfolio-container {
     display: flex;
     flex-wrap: wrap;
@@ -682,6 +685,11 @@ body {
     position: relative; /* 让 tooltip 绝对定位 */
 }
 
+.internship-link {
+    cursor: pointer; /* 确保鼠标指针仍然是可点击的 */
+    text-decoration: none; /* 避免下划线影响美观 */
+}
+
 .internship-link:hover {
     color: #b29574; /* 悬停变色 */
 }
@@ -890,6 +898,8 @@ video, iframe {
 .footer-socials a:hover {
     color: #7d7d7d; /* 悬停时颜色加深 */
 }
+
+
 
 /* 动画 */
 
