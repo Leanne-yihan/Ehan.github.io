@@ -288,7 +288,88 @@ section > * {
 }
    
 
+@media (max-width: 1200px) { /* 适配非全屏窗口 */
+     /* 🔹 让每个 section 变成一个完整的“板块” */
+     section {
+        width: 100%;
+        min-height: auto; /* 高度根据内容自适应 */
+        padding: 10% 5%; /* 保持足够的内边距，防止挤压 */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        position: relative;
+    }
 
+    /* 🔹 确保每个 section 之间不会重叠 */
+    section + section {
+        margin-top: 0; /* 确保不会有负 margin */
+    }
+
+    /* 🔹 允许 section 里的内容滚动 */
+    .home-content, 
+    .internship-des{
+        max-width: 90%;
+        word-break: break-word;
+        overflow:visible; /* 允许内容滚动 */
+    }
+
+ 
+
+    .education-content{
+        overflow: scroll;
+    }
+    .portfolio-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        overflow: scroll;
+    }
+        /* 🔹 确保 section 内部的内容不会溢出 */
+    section > * {
+        max-width: 100%;
+        overflow-wrap: break-word; /* 让文本换行 */
+    }
+    
+    /* 🔹 让 section 内容不会溢出 */
+    .scrollable-content {
+        max-height: 80vh; /* 限制最大高度，但不会溢出 */
+        overflow-y: auto; /* 让超出的内容可以滚动 */
+        padding-right: 10px; /* 预留滚动条空间 */
+    }
+    
+    .portfolio-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+        /* 🔹 避免 flex 挤压内容 */
+        .education-content,
+        .internship-container,
+        .portfolio
+        .portfolio-container,
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        /* 🔹 让 iframe 视频不会超出 */
+        .portfolio iframe {
+            width: 100%;
+            height: auto;
+            max-height: 60vh;
+        }
+    
+        /* 🔹 让每个 section 里的大内容可以滚动 */
+        .scrollable-section {
+            max-height: 80vh;
+            overflow-y: auto;
+            padding-right: 10px; /* 预留滚动条空间 */
+        }
+}
 
 * {
     margin: 0;
@@ -344,9 +425,11 @@ body {
     animation-delay: calc(.2s * var(--i));
 }
 
-.navbar a:hover,
+
+/* 🔹 当前选中的 section 对应的 navbar 链接变成金色 */
 .navbar a.active {
-    color: #b7b2a9;
+    color: #9e968c; /* 金色 */
+    font-weight: bold;
 }
 
 /* 默认按钮样式 */
